@@ -22,7 +22,6 @@ angular.module('zorkgularApp')
       if (!me.won) {
         var arrayCmd = cmd.split(' ');
         var _cmd = cmd;
-        console.log(cmd);
         cmd = cmd.toLowerCase();
         arrayCmd[0] = arrayCmd[0].toLowerCase();
         switch (cmd) {
