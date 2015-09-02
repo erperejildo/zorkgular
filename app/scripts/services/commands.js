@@ -13,6 +13,7 @@ angular.module('zorkgularApp')
     var commands = {};
     // states
     var me = {};
+    me.state = 'at room';
 
     String.prototype.capitalizeFirstLetter = function() {
       return this.charAt(0).toUpperCase() + this.slice(1);
@@ -66,16 +67,28 @@ angular.module('zorkgularApp')
             case 'go':
               switch (arrayCmd[1]) {
                 case 'table':
-                  cmd = langEn.goTable;
-                  me.state = 'at table';
+                  if (me.state == 'at room') {
+                    cmd = langEn.goTable;
+                    me.state = 'at table';
+                  } else {
+                    cmd = langEn.goNoWhere;
+                  }
                   break;
                 case 'bed':
-                  cmd = langEn.goBed;
-                  me.state = 'at bed';
+                  if (me.state == 'at room') {
+                    cmd = langEn.goBed;
+                    me.state = 'at bed';
+                  } else {
+                    cmd = langEn.goNoWhere;
+                  }
                   break;
                 case 'window':
-                  cmd = langEn.goWindow;
-                  me.state = 'at window';
+                  if (me.state == 'at room') {
+                    cmd = langEn.goWindow;
+                    me.state = 'at window';
+                  } else {
+                    cmd = langEn.goNoWhere;
+                  }
                   break;
                 case 'door':
                   if (me.state == 'at corridor' || me.state == 'at exit') {
