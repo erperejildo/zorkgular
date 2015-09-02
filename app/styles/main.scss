@@ -1,0 +1,178 @@
+// bower:scss
+// endbower
+
+$fontBody: 25;
+$darkGreen: #1d5528;
+$lightGreen: #23f478;
+
+@font-face {
+    font-family: 'Regular';
+    src: url('fonts/aller_rg-webfont.eot');
+    src: url('fonts/aller_rg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aller_rg-webfont.woff2') format('woff2'),
+         url('fonts/aller_rg-webfont.woff') format('woff'),
+         url('fonts/aller_rg-webfont.ttf') format('truetype'),
+         url('fonts/aller_rg-webfont.svg#allerregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Bold';
+    src: url('fonts/aller_bd-webfont.eot');
+    src: url('fonts/aller_bd-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/aller_bd-webfont.woff2') format('woff2'),
+         url('fonts/aller_bd-webfont.woff') format('woff'),
+         url('fonts/aller_bd-webfont.ttf') format('truetype'),
+         url('fonts/aller_bd-webfont.svg#allerbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+// MIXINS
+@mixin font-size($value) {
+  font-size: $value*$fontBody + px;
+  //font-size: ($rem) + rem;
+}
+
+@mixin animation() {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@mixin effect($effect) {
+  -webkit-animation-name: $effect;
+  animation-name: $effect;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+     -o-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+@mixin transition($sec, $mode) {
+  -webkit-transition: $sec+s all;
+  -moz-transition: $sec+s all;
+  -o-transition: $sec+s all;
+  transition: $sec+s all;
+  transition-timing-function: $mode;
+}
+
+@mixin rotate($rot) {
+  -ms-transform: rotate($rot+deg); /* IE 9 */
+  -webkit-transform: rotate($rot+deg); /* Chrome, Safari, Opera */
+  transform: rotate($rot+deg);
+} 
+
+@mixin triangle($size, $color, $direction: 'up') {
+  width: 0;
+  height: 0;
+
+  @if $direction == 'left' {
+    border-top: $size solid transparent; 
+    border-right: $size * 1.732 solid $color; 
+    border-bottom: $size solid transparent; 
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent; 
+    border-bottom: $size solid transparent; 
+    border-left: $size * 1.732 solid $color; 
+  }
+}
+// END MIXINS
+
+* {
+  margin: 0;
+  padding: 0;
+  background-clip: padding-box;  
+  -moz-background-clip: padding;  
+  -webkit-background-clip: padding;
+  outline: none !important;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html, body{
+  height:100%;
+}
+
+$paddingCnt: 40px;
+body {
+  @include font-size(1);
+  font-family: 'Regular';
+  padding: 0;
+  background-color: #000;
+  color: $lightGreen;
+  padding: 40px;
+}
+
+#container {
+  background-color: $darkGreen;
+  padding: 20px;
+  height: 100%;
+  position: relative;
+  overflow: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.border {
+  border: 3px solid $lightGreen;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 1;
+}
+
+#topLeft {
+  border-right: none;
+  border-bottom: none;
+  top: $paddingCnt;
+  left: $paddingCnt;
+}
+
+#topRight {
+  border-left: none;
+  border-bottom: none;
+  top: $paddingCnt;
+  right: $paddingCnt;
+}
+
+#bottomLeft {
+  border-top: none;
+  border-right: none;
+  bottom: $paddingCnt;
+  left: $paddingCnt;
+}
+
+#bottomRight {
+  border-left: none;
+  border-top: none;
+  bottom: $paddingCnt;
+  right: $paddingCnt;
+}
+
+#commands {
+  margin-top: 20px;
+  span {
+    position: absolute;
+  }
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  font-family: 'Regular';
+  color: $lightGreen;
+  @include font-size(1);
+  width: 100%;
+  padding-left: 20px;
+}
