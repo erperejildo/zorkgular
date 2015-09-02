@@ -18,6 +18,16 @@ To compile the app run `grunt build` and open the `dist` folder.
 ## Online project
 
 Visit http://danielrodriguez.eu/zorkgular/
+ 
+## Instructions
+
+The player is in a room, and they interact by entering the following commands into an input field:
+
+- look at room: player gets description of the room.
+- look at me: player gets description of self.
+- say [message]: player says message (to themselves).
+
+You have other commands, like (for example) go. You can go to bed writing `go bed`, but not `go to bed` (action and object).
  <p>
  
 Tested in Chrome, Firefox, Explorer and Opera.
