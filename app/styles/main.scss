@@ -109,7 +109,7 @@ body {
   padding: 0;
   background-color: #000;
   color: $lightGreen;
-  padding: 40px;
+  padding: $paddingCnt;
 }
 
 #container {
@@ -175,4 +175,32 @@ input {
   @include font-size(1);
   width: 100%;
   padding-left: 20px;
+}
+
+@media (max-width: 600px) {
+  $paddingCnt: 10px;
+
+  body {
+    padding: $paddingCnt;
+  }
+
+  #topLeft {
+    top: $paddingCnt;
+    left: $paddingCnt;
+  }
+
+  #topRight {
+    top: $paddingCnt;
+    right: $paddingCnt;
+  }
+
+  #bottomLeft {
+    bottom: $paddingCnt;
+    left: $paddingCnt;
+  }
+
+  #bottomRight {
+    bottom: $paddingCnt;
+    right: $paddingCnt;
+  }
 }
