@@ -1,12 +1,23 @@
-# zorkgular
+# Zorkgular
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.12.1.
+Old text-based adventure like <a href="https://www.youtube.com/watch?v=wFzg5WeSpDE&list=PLDD70139B89105635&index=1">Zork</a> but with AngularJS.
 
-## Build & development
+## Technologies used
 
-Run `grunt` for building and `grunt serve` for preview.
+- Scaffolding with Yeoman.
+- Development with AngularJS. Ng-sanitize for show data with html tags.
+- Style with CSS3 and Sass.
+- Grunt as task runner.
 
-## Testing
+## Local project
 
-Running `grunt test` will run the unit tests with karma.
+Download the repository and run `npm install & bower install`.<br>
+Run `grunt serve` to run the server in local.<br>
+To compile the app run `grunt build` and open the `dist` folder.
+
+## Online project
+
+Visit http://danielrodriguez.eu/zorkgular/
+ <p>
+ 
+Tested in Chrome, Firefox, Explorer and Opera.
