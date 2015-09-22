@@ -26,6 +26,10 @@ The player is in a room, and they interact by entering the following commands in
 - look at room: player gets description of the room.
 - look at me: player gets description of self.
 - say [message]: player says message (to themselves).
+- go [place]
+- do [something]
+- read [something]
+- open [something]
 
 You have other commands, like (for example) go. You can go to bed writing `go bed`, but not `go to bed` (action and object).
  <p>
