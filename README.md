@@ -17,7 +17,7 @@ To compile the app run `grunt build` and open the `dist` folder.
 
 ## Online project
 
-Visit http://danielrodriguez.eu/zorkgular/
+Visit http://rodriguezdaniel.com/zorkgular/
  
 ## Instructions
 
